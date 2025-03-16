@@ -1,106 +1,143 @@
-/* Custom Navbar Styles */
-.custom-navbar {
-    width: 100%;
-    background-color: #f8f9fa;
-    padding: 15px 20px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+.login-button {
+    /* background-color: #009970; */
+    background-color:#6495ED;
+    color: #fff;
+    font-size: 14px;
+    padding: 8px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: 0.3s background-color;
+    border: none; /* Remove Bootstrap button border */
+    display: inline-block; /* Ensure proper button shape */
+  }
+  /* .navbar {
+  
+    backdrop-filter: blur(8px);
+    transition: all 0.3s ease-in-out;
+} */
+ /* .navbar{
+  border-bottom: 3px solid;
+    border-image: linear-gradient(to right, #87CEEB, #4682B4);
+    border-image-slice: 1;
+ } */
+
+ /* .navbar::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px; 
+  height: 3px;
+  background: #87CEEB;
+  border-radius: 50px; 
+} */
+
+.navbar.scrolled::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px; 
+  height: 3px;
+  background: #000000;
+  border-radius: 50px;
+  transition: width 0.3s ease-in-out;
 }
 
-/* Navbar Container */
-.nav-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 1200px;
-    margin: auto;
+.navbar.scrolled {
+  /* border-bottom: 3px solid #87CEEB; */
+  backdrop-filter: blur(8px); /* Adds blur effect */
+  transition: all 0.3s ease-in-out;
 }
 
-/* Brand Styling */
-.nav-brand {
-    font-family: 'Playfair Display', serif;
-    font-size: 24px;
-    font-weight: bold;
+  .navbar-brand {
+    font-weight: 500;
     color: black;
-    text-decoration: none;
-    padding: 8px 12px;
-    background-color: #ADD8E6;
-    border-radius: 5px;
-    border: 1px solid black;
-}
-
-/* Navbar Links */
-.nav-links {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-/* Individual Nav Items */
-.nav-item {
-    font-size: 18px;
-    text-decoration: none;
-    color: black;
-    transition: color 0.3s ease;
-}
-
-.nav-item:hover {
-    color: #007bff;
-}
-
-/* Buttons */
-.login-btn,
-.logout-btn {
-    padding: 8px 15px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-.login-btn {
-    background-color: #007bff;
-    color: white;
-    text-decoration: none;
-}
-
-.logout-btn {
-    background-color: #dc3545;
-    color: white;
-}
-
-/* Mobile Menu Toggler */
-.nav-toggler {
-    display: none;
-    background: none;
-    border: none;
     font-size: 24px;
-    cursor: pointer;
+    transition: 0.3s color;
+}
+.image-box {
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out 0.1s; ;
+    border-radius: 8px;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        background-color: #f8f9fa;
-        padding: 15px;
-        text-align: center;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
-
-    .nav-toggler {
-        display: block;
-    }
+.image-box:hover {
+    box-shadow: 0 8px 20px rgba(128, 128, 128, 0.6); /* Gray shadow */
+    border-radius: 8px; /* Optional: to make edges smoother */
+    transform: scale(1.1);
 }
+  
+  .login-button:hover {
+    /* background-color: #00b383; */
+    background-color:#4682B4
+  }
+  
+  /* Logout Button (if needed) */
+  .logout-button {
+    background-color: #d9534f;
+    color: white;
+    font-size: 14px;
+    padding: 8px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: 0.3s background-color;
+    border: none;
+  }
+  
+  .logout-button:hover {
+    background-color: #c9302c;
+  }
+
+  /* Remove default border and focus outline from toggler */
+.navbar-toggler {
+    border: none;
+    font-size: 1.25rem;
+  }
+  
+  .navbar-toggler:focus,
+  .btn-close:focus {
+    box-shadow: none;
+    outline: none;
+  }
+  
+  /* Navbar Links */
+  .nav-link {
+    color: #666777;
+    font-weight: 700;
+    position: relative;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  /* Active and Hover Effects */
+  .nav-link:hover,
+  .nav-link.active {
+    /* color: #009970; */
+    color: black;
+  }
+  
+  /* Underline effect for links on large screens */
+  @media (min-width: 991px) {
+    .nav-link::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 2px;
+      background-color: #000000;
+      visibility: hidden;
+      transition: width 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    }
+  
+    .nav-link:hover::before,
+    .nav-link.active::before {
+      width: 100%;
+      visibility: visible;
+    }
+  }
+  
+  

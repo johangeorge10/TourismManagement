@@ -1,0 +1,352 @@
+.errorMessage {
+  background-color: rgba(255, 0, 0, 0.1);
+  color: #d32f2f;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  border-left: 3px solid #d32f2f;
+}
+
+/* You may also want to add styles for disabled buttons */
+.signupButton:disabled,
+.googleButton:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.signupContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  
+  /* Blurred background */
+  .signupContainer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('/images/aq.jpg') center/cover no-repeat;
+    filter: blur(5px);
+    z-index: -1;
+    margin: -10px;
+    width: calc(100% + 20px);
+    height: calc(100% + 20px);
+  }
+  
+  .signupCard {
+    display: flex;
+    width: 900px;
+    min-height: 650px; /* Slightly taller to accommodate more fields */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    background-color: rgb(255, 255, 255);
+    z-index: 1;
+    position: relative;
+  }
+  
+  .signupFormContainer {
+    flex: 1;
+    padding: 25px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+  }
+  
+  .logoContainer {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .logo {
+    width: 90px;
+    height: auto;
+    margin-bottom: 5px;
+    object-fit: contain;
+  }
+  
+  .logoContainer h1 {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0;
+  }
+  
+  .signupInstruction {
+    margin: 15px 0;
+    font-size: 16px;
+    text-align: center;
+    font-weight: 500;
+  }
+  
+  .signupFormContainer form {
+    width: 100%;
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .inputGroup {
+    margin-bottom: 15px;
+    position: relative;
+  }
+  
+  .inputGroup input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 15px;
+    box-sizing: border-box;
+  }
+  
+  .passwordGroup {
+    position: relative;
+  }
+  
+  .passwordToggle {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .termsCheckbox {
+    margin: 5px 0 15px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .termsCheckbox input {
+    margin-right: 8px;
+  }
+  
+  .termsCheckbox a {
+    color: #ff7e5f;
+    text-decoration: none;
+  }
+  
+  .termsCheckbox a:hover {
+    text-decoration: underline;
+  }
+  
+  .signupButton {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 25px;
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 5px;
+  }
+  
+  .signupButton:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+  }
+  
+  /* Google Button Styling */
+  .orDivider {
+    position: relative;
+    text-align: center;
+    margin: 15px 0;
+    width: 100%;
+  }
+  
+  .orDivider::before, 
+  .orDivider::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 45%;
+    height: 1px;
+    background-color: #e0e0e0;
+  }
+  
+  .orDivider::before {
+    left: 0;
+  }
+  
+  .orDivider::after {
+    right: 0;
+  }
+  
+  .orDivider span {
+    display: inline-block;
+    padding: 0 10px;
+    background-color: white;
+    color: #757575;
+    font-size: 14px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .googleButton {
+    height: 38px;
+    width: 100%;
+    background-color: white;
+    border-radius: 2px;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    border: 1px solid #e0e0e0;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+  }
+  
+  .googleButton:hover {
+    box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.2);
+  }
+  
+  .googleButton:active {
+    background-color: #f5f5f5;
+  }
+  
+  .googleIconWrapper {
+    width: 38px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid #e0e0e0;
+  }
+  
+  .googleIcon {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .googleButtonText {
+    color: #757575;
+    font-size: 14px;
+    font-weight: 500;
+    padding-left: 16px;
+    flex-grow: 1;
+    text-align: center;
+  }
+  
+  .loginAccount {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    width: 100%;
+  }
+  
+  .loginAccount p {
+    margin: 0;
+    font-size: 14px;
+  }
+  
+  .loginButton {
+    padding: 6px 14px;
+    border: 1px solid #ec407a;
+    border-radius: 25px;
+    background: transparent;
+    color: #ec407a;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+  }
+  
+  .loginButton:hover {
+    background-color: #ec407a;
+    color: white;
+  }
+  
+  .gradientContainer {
+    flex: 1;
+    color: white;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(135deg, #ff8a00, #e52e71);
+  }
+  
+  .gradientContainer h2 {
+    font-size: 26px;
+    margin-bottom: 20px;
+  }
+  
+  .gradientContainer p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  .benefitsList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+  }
+  
+  .benefitsList li {
+    margin-bottom: 10px;
+    font-size: 15px;
+  }
+  
+  /* Make sure the page has no margins */
+  body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .signupCard {
+      flex-direction: column;
+      width: 100%;
+      height: auto;
+      max-width: 95%;
+      border-radius: 10px;
+    }
+   
+    .gradientContainer {
+      padding: 30px 20px;
+    }
+    
+    /* Additional styles to ensure the form fits on mobile */
+    .signupFormContainer {
+      padding: 20px;
+    }
+    
+    .loginAccount {
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
+    }
+    
+    .loginAccount p {
+      margin-bottom: 5px;
+    }
+  }

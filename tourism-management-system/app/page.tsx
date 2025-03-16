@@ -4,10 +4,12 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './globals.css';
-//import CustomNavbar from './navbar/CustomNavbar';
+import CustomNavbar from './navbar/CustomNavbar';
+import CustomFooter from './footer/customfooter';
 import './navbar/navbar.css';
 import { FaInstagram } from "react-icons/fa6";
-
+import { MdOutlineEmail } from "react-icons/md";
+import Link from 'next/link';
 
 export default function LandingPage() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -25,16 +27,14 @@ export default function LandingPage() {
 
     return (
         <div className="background-container">
-            <div className="background-container">
+            {/* <div className="background-container">
             <nav className={`navbar navbar-expand-lg fixed-top ${scrolled ? 'scrolled' : ''} py-3`}>
                 <div className="container ps-0 ms-0 pe-0 me-0">
                     <a className="navbar-brand fw-bold p-2 ms-4"
                         style={{
                             fontFamily: 'Playfair Display, serif',
                             fontWeight: 'bold',
-                            // backgroundColor: '#ADD8E6',
-                            // color: 'black',
-                            // textShadow: '1px 1px 2px rgba(0, 0, 0, 0.2)'
+                            
                         }}
                         href="#"
                     >
@@ -46,7 +46,11 @@ export default function LandingPage() {
                     <div className="collapse navbar-collapse " id="navbarNav">
                         <ul className="navbar-nav ms-auto ">
                             <li className="nav-item me-4"><a className="nav-link" href="/">Home</a></li>
-                            <li className="nav-item me-4"><a className="nav-link" href="#">Destinations</a></li>
+                            <li className="nav-item me-4">
+                            <Link className="nav-link" href="/destination">
+                                Destinations
+                            </Link>
+                            </li>
                             <li className="nav-item me-4"><a className="nav-link" href="#">Contact</a></li>
                             <li className="nav-item me-4">
                             {isLoggedIn ? (
@@ -60,9 +64,9 @@ export default function LandingPage() {
                     </div>
                 </div>
             </nav>
-            </div>
+            </div> */}
 
-            {/* <CustomNavbar /> */}
+            <CustomNavbar />
 
             <header className="text-center py-5 text-white">
                 <div className="container">
@@ -101,18 +105,24 @@ export default function LandingPage() {
             </section>
 
             {/* Footer Section */}
-            <footer className="footer text-center py-4">
+            {/* <footer className="footer text-center py-4">
                 <div className="container">
                     <p>
                         Follow us on &nbsp;&nbsp;
                         <a href="https://www.instagram.com/sreee_the_dream_chaser/" target="_blank" rel="noopener noreferrer" className="footer-link">
-                            {/* <Image src="/images/instagram.png" width={24} height={24} alt="Instagram" className="ms-2" /> */}
+                            
                             <FaInstagram />
                         </a>
+                        &nbsp;&nbsp;
+                        <a href="mailto:xplodx69@gmail.com" target="_blank" rel="noopener noreferrer" className="footer-link">
+                        
+                        <MdOutlineEmail />
+                    </a>
                     </p>
                     <p>© 2025 Bon Voyage. All rights reserved.</p>
                 </div>
-            </footer>
+            </footer> */}
+             <CustomFooter />
 
             {/* Overlay Effect for Blurring */}
             <div className="background-overlay"></div>

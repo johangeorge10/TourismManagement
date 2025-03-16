@@ -7,7 +7,7 @@ import Navbar from "../../components/Navbar";
 
 export default function HomePage() {
   const router = useRouter();
-  const [menuOpen, setMenuOpen] = useState(false);
+ 
 
   return (
     <div className="min-h-screen bg-gray-100">
