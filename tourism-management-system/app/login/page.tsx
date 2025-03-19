@@ -42,7 +42,7 @@ const Login = () => {
       localStorage.setItem('token', data.token);
       
       // Redirect to dashboard or home page
-      router.push('/dashboard');
+      router.push('/destination');
     } catch (err) {
       // setError(err.message || 'An error occurred during login');
       console.error('Login error:', err);

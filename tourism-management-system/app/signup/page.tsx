@@ -63,7 +63,7 @@ const SignUp = () => {
       }
       
       // Redirect to dashboard or home page
-      router.push('/dashboard');
+      router.push('/destination');
       
     } catch (err) {
       // Handle signup error
